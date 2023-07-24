@@ -5,6 +5,8 @@ import com.driver.coordinate.receiver.repository.EventRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class EventService {
     @Autowired
@@ -13,4 +15,9 @@ public class EventService {
     public void save(Event event) {
         eventRepository.save(event);
     }
+
+    public List<Event> findOpenedEventsByVehicle(String vehiclePlate) {
+        return eventRepository.findOpenedEventsByVehicle(vehiclePlate);
+    }
+
 }

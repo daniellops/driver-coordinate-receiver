@@ -16,4 +16,5 @@ public class Event {
     private long longitude;
     private EventType eventType;
     private double speed;
+
 }

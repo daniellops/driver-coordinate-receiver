@@ -23,4 +23,28 @@ public class DriverInfo {
     private double temperature;
     private int packetCounter;
     private int transmissionReasonId;
+
+    public boolean hasHardAcceleration() {
+        return transmissionReasonId == 104 && acceleration > 0.22;
+    }
+
+    public boolean hasHardBraking() {
+        return transmissionReasonId == 105 && acceleration > 0.17;
+    }
+
+    public boolean hasHardTurning() {
+        return transmissionReasonId == 106 && acceleration > 0.30;
+    }
+
+    public boolean hasSpeeding() {
+        return speed > 80;
+    }
+
+    public boolean hasOverTemperature() {
+        return temperature > 115;
+    }
+
+    public boolean hasLowBattery() {
+        return batteryVoltage > 21;
+    }
 }
