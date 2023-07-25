@@ -24,27 +24,27 @@ public class DriverInfo {
     private int packetCounter;
     private int transmissionReasonId;
 
-    public boolean hasHardAcceleration() {
+    public boolean isHardAcceleration() {
         return transmissionReasonId == 104 && acceleration > 0.22;
     }
 
-    public boolean hasHardBraking() {
+    public boolean isHardBraking() {
         return transmissionReasonId == 105 && acceleration > 0.17;
     }
 
-    public boolean hasHardTurning() {
+    public boolean isHardTurning() {
         return transmissionReasonId == 106 && acceleration > 0.30;
     }
 
-    public boolean hasSpeeding() {
+    public boolean isSpeeding() {
         return speed > 80;
     }
 
-    public boolean hasOverTemperature() {
+    public boolean isOverTemperature() {
         return temperature > 115;
     }
 
-    public boolean hasLowBattery() {
+    public boolean isLowBattery() {
         return batteryVoltage > 21;
     }
 }
